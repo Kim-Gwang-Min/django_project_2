@@ -2,22 +2,33 @@
 
 {% block content %}
 
-    <style>
-        .testing {
-            background-color: yellow;
-            height: 48px;
-            width: 48px;
-            margin: 1rem;
-            border-radius: .5rem;
-        }
-    </style>
-    <div style="height: 20rem; background-color: aqua; border-radius: 1rem; margin: 2rem;" >
-        <h1>Second!</h1>
+{#    <style>#}
+{#        .testing {#}
+{#            background-color: yellow;#}
+{#            height: 48px;#}
+{#            width: 48px;#}
+{#            margin: 1rem;#}
+{#            border-radius: .5rem;#}
+{#        }#}
+{#    </style>#}
+    <div style="margin: 2rem; text-align: center" >
+        <h1>METHOD</h1>
 
-    <div class="testing" style="display: inline-block">block</div>
-    <div class="testing" style="display: inline-block; width: 3rem; height: 3rem;">block</div>
-    <div class="testing" style="display: inline-block; width: 3em; height: 3em;">block</div>
-    <div class="testing" style="display: inline-block; width: 30%; height: 30%;">block</div>
+        <form action="/accounts/hello_world/" method="post">
+            {% csrf_token %}
+            <input type="text" name="hello_world_input">
+            <input class="btn btn-info rounded-pill px-4" type="submit">
+        </form>
+
+        {% if hello_world_output %}
+            <h3>{{ hello_world_output.text }}</h3>
+        {% endif %}
+
+
+{#    <div class="testing" style="display: inline-block">block</div>#}
+{#    <div class="testing" style="display: inline-block; width: 3rem; height: 3rem;">block</div>#}
+{#    <div class="testing" style="display: inline-block; width: 3em; height: 3em;">block</div>#}
+{#    <div class="testing" style="display: inline-block; width: 30%; height: 30%;">block</div>#}
 
     </div>
 
