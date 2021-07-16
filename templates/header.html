@@ -6,7 +6,16 @@
     <div class = 'header_button'>
         <spam>navi1</spam>
         <spam>navi2</spam>
-        <spam>navi3</spam>
-        <spam>navi4</spam>
+        <spam>
+            <a href="{% url 'accountapp:login' %}">
+                Login
+            </a>
+        </spam>
+
+        <spam>
+            <a href="{% url 'accountapp:creat' %}">
+                SignUp
+            </a>
+        </spam>
     </div>
 </div>
